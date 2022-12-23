@@ -1,0 +1,12 @@
+{
+  "name": "invoice-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "ethers": "^5.7.2",
+    "tachyons": "4.12.0"
+  }
+}

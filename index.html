@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    />
+  </head>
+  <body>
+    <div class="f1 lh-title">Invoice</div>
+    <hr />
+    <br />
+
+    <button id="connectButton" onclick="bundle.connect()">
+      Connect Button
+    </button>
+    <div class="flex flex-column">
+      <label for="buyerPan">BuyerPan:</label>
+      <input type="text" id="buyerPan" name="buyerPan" />
+      <label for="sellerPan">SellerPan:</label>
+      <input type="text" id="sellerPan" name="sellerPan" />
+      <label for="invoiceAmount">InvoiceAmount:</label>
+      <input type="text" id="invoiceAmount" name="invoiceAmount" />
+      <label for="invoiceDate">InvoiceDate:</label>
+      <input type="text" id="invoiceDate" name="invoiceDate" />
+      <label for="paymentStatus">PaymentStatus:</label>
+      <input type="text" id="paymentStatus" name="paymentStatus" />
+      <button id="executeButton" onclick="bundle.execute()">Execute</button>
+      <br />
+      <br />
+      <div class="flex flex-column">
+        <label for="buyerPanDetails" name="buyerPanDetails"
+          >Enter BuyerPan to get all Invoices</label
+        >
+        <input type="text" id="buyerPanDetails" name="buyerPanDetails" />
+        <button id="getInvoice" onclick="bundle.getInvoice()">
+          Get Invoice
+        </button>
+        <div id="invoiceArea"></div>
+      </div>
+    </div>
+    <script src="./dist/bundle.js" type="text/javascript"></script>
+  </body>
+</html>
