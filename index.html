@@ -7,42 +7,110 @@
     <title>Invoice</title>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
     />
   </head>
   <body>
-    <div class="f1 lh-title">Invoice</div>
+    <div class="d-flex justify-content-between">
+      <h1>Invoice</h1>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="connectButton"
+        onclick="bundle.connect()"
+      >
+        Connect Button
+      </button>
+    </div>
     <hr />
     <br />
-
-    <button id="connectButton" onclick="bundle.connect()">
-      Connect Button
-    </button>
-    <div class="flex flex-column">
-      <label for="buyerPan">BuyerPan:</label>
-      <input type="text" id="buyerPan" name="buyerPan" />
-      <label for="sellerPan">SellerPan:</label>
-      <input type="text" id="sellerPan" name="sellerPan" />
-      <label for="invoiceAmount">InvoiceAmount:</label>
-      <input type="text" id="invoiceAmount" name="invoiceAmount" />
-      <label for="invoiceDate">InvoiceDate:</label>
-      <input type="text" id="invoiceDate" name="invoiceDate" />
-      <label for="paymentStatus">PaymentStatus:</label>
-      <input type="text" id="paymentStatus" name="paymentStatus" />
-      <button id="executeButton" onclick="bundle.execute()">Execute</button>
+    <div class="">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          id="buyerPan"
+          class="form-control"
+          placeholder="Buyer PAN"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          id="sellerPan"
+          class="form-control"
+          placeholder="Seller PAN"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          id="invoiceAmount"
+          class="form-control"
+          placeholder="Amount in rupees"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          id="invoiceDate"
+          class="form-control"
+          placeholder="Invoice date"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          id="paymentStatus"
+          class="form-control"
+          placeholder="Payment status(paid/unpaid)"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <button
+        class="btn btn-primary btn-sm"
+        id="executeButton"
+        onclick="bundle.execute()"
+      >
+        Save details
+      </button>
       <br />
-      <br />
-      <div class="flex flex-column">
-        <label for="buyerPanDetails" name="buyerPanDetails"
-          >Enter BuyerPan to get all Invoices</label
+      <hr />
+      <div class="">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            id="buyerPanDetails"
+            class="form-control"
+            placeholder="Enter BuyerPan to get all Invoices"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <button
+          class="btn btn-primary btn-sm"
+          id="getInvoice"
+          onclick="bundle.getInvoice()"
         >
-        <input type="text" id="buyerPanDetails" name="buyerPanDetails" />
-        <button id="getInvoice" onclick="bundle.getInvoice()">
           Get Invoice
         </button>
         <div id="invoiceArea"></div>
       </div>
     </div>
     <script src="./dist/bundle.js" type="text/javascript"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
