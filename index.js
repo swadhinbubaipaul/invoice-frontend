@@ -106,9 +106,6 @@ const invoiceArea = document.getElementById("invoiceArea");
 
 async function connect() {
   if (typeof window.ethereum !== "undefined") {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const ledger = new ethers.Contract(contractAddress, abi, signer);
     try {
       await ethereum.request({ method: "eth_requestAccounts" });
     } catch (error) {
@@ -138,6 +135,9 @@ async function execute() {
 }
 
 async function getInvoice() {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const signer = provider.getSigner();
+  const ledger = new ethers.Contract(contractAddress, abi, signer);
   const buyerPanDetails = document.getElementById("buyerPanDetails").value;
   console.log(buyerPanDetails);
   let ids = await ledger.getInvoiceIds(buyerPanDetails);

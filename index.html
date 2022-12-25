@@ -66,6 +66,17 @@
           />
         </div>
         <div class="input-group p-2">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01"
+              >Payment Status</label
+            >
+          </div>
+          <select class="custom-select" id="paymentStatus">
+            <option value="paid">Paid</option>
+            <option value="unpaid">Unpaid</option>
+          </select>
+        </div>
+        <!-- <div class="input-group p-2">
           <input
             type="text"
             id="paymentStatus"
@@ -73,7 +84,7 @@
             placeholder="Payment status(paid/unpaid)"
             aria-describedby="basic-addon1"
           />
-        </div>
+        </div> -->
         <button
           class="btn btn-primary btn-sm"
           id="executeButton"
