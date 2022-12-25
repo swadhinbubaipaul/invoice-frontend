@@ -96,9 +96,6 @@ const abi = [
     type: "function",
   },
 ];
-const provider = new ethers.providers.Web3Provider(window.ethereum);
-const signer = provider.getSigner();
-const ledger = new ethers.Contract(contractAddress, abi, signer);
 
 const buyerPan = document.getElementById("buyerPan");
 const sellerPan = document.getElementById("sellerPan");
@@ -109,16 +106,27 @@ const invoiceArea = document.getElementById("invoiceArea");
 
 async function connect() {
   if (typeof window.ethereum !== "undefined") {
-    await ethereum.request({ method: "eth_requestAccounts" });
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const ledger = new ethers.Contract(contractAddress, abi, signer);
+    try {
+      await ethereum.request({ method: "eth_requestAccounts" });
+    } catch (error) {
+      console.log(error);
+    }
+    document.getElementById("connectButton").innerHTML = "Connected";
+    const accounts = await ethereum.request({ method: "eth_accounts" });
+    console.log(accounts);
+  } else {
+    document.getElementById("connectButton").innerHTML =
+      "Please install MetaMask";
   }
 }
 
 async function execute() {
-  // console.log(buyerPan.value);
-  // console.log(sellerPan.value);
-  // console.log(invoiceAmount.value);
-  // console.log(invoiceDate.value);
-  // console.log(status.value);
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const signer = provider.getSigner();
+  const ledger = new ethers.Contract(contractAddress, abi, signer);
   const tx = await ledger.saveInvoice(
     buyerPan.value,
     sellerPan.value,

@@ -13,11 +13,11 @@
     />
   </head>
   <body>
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between m-2">
       <h1>Invoice</h1>
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary m-2"
         id="connectButton"
         onclick="bundle.connect()"
       >
@@ -25,64 +25,66 @@
       </button>
     </div>
     <hr />
-    <br />
-    <div class="">
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          id="buyerPan"
-          class="form-control"
-          placeholder="Buyer PAN"
-          aria-describedby="basic-addon1"
-        />
+    <div
+      class="d-flex flex-column container col-md-5 align-center form-group mb-2 p-2"
+    >
+      <div class="text-center">
+        <div class="input-group p-2">
+          <input
+            type="text"
+            id="buyerPan"
+            class="form-control"
+            placeholder="Buyer PAN"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="input-group p-2">
+          <input
+            type="text"
+            id="sellerPan"
+            class="form-control"
+            placeholder="Seller PAN"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="input-group p-2">
+          <input
+            type="text"
+            id="invoiceAmount"
+            class="form-control"
+            placeholder="Amount in rupees"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="input-group p-2">
+          <input
+            type="text"
+            id="invoiceDate"
+            class="form-control"
+            placeholder="Invoice date"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="input-group p-2">
+          <input
+            type="text"
+            id="paymentStatus"
+            class="form-control"
+            placeholder="Payment status(paid/unpaid)"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <button
+          class="btn btn-primary btn-sm"
+          id="executeButton"
+          onclick="bundle.execute()"
+        >
+          Save details
+        </button>
       </div>
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          id="sellerPan"
-          class="form-control"
-          placeholder="Seller PAN"
-          aria-describedby="basic-addon1"
-        />
-      </div>
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          id="invoiceAmount"
-          class="form-control"
-          placeholder="Amount in rupees"
-          aria-describedby="basic-addon1"
-        />
-      </div>
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          id="invoiceDate"
-          class="form-control"
-          placeholder="Invoice date"
-          aria-describedby="basic-addon1"
-        />
-      </div>
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          id="paymentStatus"
-          class="form-control"
-          placeholder="Payment status(paid/unpaid)"
-          aria-describedby="basic-addon1"
-        />
-      </div>
-      <button
-        class="btn btn-primary btn-sm"
-        id="executeButton"
-        onclick="bundle.execute()"
-      >
-        Save details
-      </button>
-      <br />
       <hr />
-      <div class="">
-        <div class="input-group mb-3">
+      <div class="text-center">
+        <div class="input-group p-2">
           <input
             type="text"
             id="buyerPanDetails"
